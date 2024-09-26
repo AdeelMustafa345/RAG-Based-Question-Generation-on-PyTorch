@@ -1,0 +1,65 @@
+Wikipedia Question Generator
+This project retrieves content from Wikipedia and generates questions based on that content using a pre-trained T5 model. The user provides a Wikipedia page name, the content is fetched, and potential answers are extracted. Questions are then generated around these answers, with ranking functionality provided as a placeholder.
+
+Features
+Fetch Wikipedia Content: Retrieve content from any Wikipedia page by specifying the page name.
+Extract Answers: Named Entity Recognition (NER) is used to extract potential answers from the Wikipedia content.
+Generate Questions: Generate questions based on the provided or extracted answers using a pre-trained T5 model.
+Highlight Answers: Automatically highlight the provided or extracted answers in the Wikipedia content.
+Rank Questions: The generated questions are randomly ranked for now (this can be improved by implementing more advanced ranking algorithms).
+Project Structure
+bash
+Copy code
+my_project_name/
+│
+├── retrieval.py            # Handles Wikipedia content retrieval and answer extraction
+├── generator.py            # Responsible for generating questions using the pre-trained T5 model
+├── app1.py                 # The main Streamlit app that ties everything together
+├── requirements.txt        # List of required libraries
+└── README.md               # Project documentation
+Setup and Installation
+1. Clone the repository
+bash
+Copy code
+git clone https://github.com/your-username/your-repository.git
+cd your-repository
+2. Install Dependencies
+Make sure you have Python 3.8+ installed on your machine. Then, run the following command to install the required Python packages:
+
+bash
+Copy code
+pip install -r requirements.txt
+3. Download Spacy Model
+To use Spacy’s Named Entity Recognition (NER) feature, download the required language model:
+
+bash
+Copy code
+python -m spacy download en_core_web_sm
+4. Run the Application
+Start the Streamlit application by running:
+
+bash
+Copy code
+streamlit run main.py
+This will open up a Streamlit web interface in your default web browser.
+
+Usage
+Enter Wikipedia Page Name: Provide the name of the Wikipedia page from which you want to fetch content.
+Select Paragraphs to Retrieve: Choose the number of paragraphs to retrieve from the page.
+Provide Answer or Use Extracted Answers: You can either provide an answer directly from the content or let the app extract potential answers for you using NER.
+Generate Questions: Specify how many questions to generate, and click the "Generate Questions" button.
+View Generated Questions: The app will generate and display ranked questions based on the content.
+Requirements
+Python 3.8+
+Streamlit
+Torch
+Transformers
+Spacy
+Wikipedia-API
+SentenceTransformers
+Future Improvements
+Better Ranking: Implement more sophisticated methods for ranking generated questions.
+Fine-Tuning Models: Fine-tune the T5 model for specific domains or improve the accuracy of question generation.
+Custom Answer Highlighting: Enhance answer detection using more advanced NLP techniques.
+Contributing
+If you'd like to contribute, feel free to fork the repository and submit a pull request. All contributions are welcome!
